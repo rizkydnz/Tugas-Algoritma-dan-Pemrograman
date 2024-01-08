@@ -1,0 +1,77 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    void pilihan();
+    void persegi();
+    void lingkaran();
+    void p_panjang();
+    
+    
+    int pbd;
+    
+    void pilihan();
+    cout << "Pilih Perhitungan Bangun Datar" << endl;
+    cout << "1. Persegi" << endl;
+    cout << "2. Lingkaran" << endl;
+    cout << "3. Persegi Panjang" << endl;
+    cout << "Masukkan Pilihan : ";
+    cin >> pbd;
+    switch (pbd){
+    
+    void persegi();    
+    case 1:
+    float lp, s; // Untuk Luas Persegi
+    // Perhitungan Luas Persegi
+    cout << "\nMENGHITUNG LUAS PERSEGI" << endl;
+    
+    cout << "Berapa Sisi Persegi : ";
+    cin >> s;
+    
+    lp = s * s;
+    
+    cout << endl << "Luas Persegi Adalah : " << lp << endl;
+    break;
+    
+    cout << endl << "======================================" << endl;
+    
+    void lingkaran();
+    case 2:
+    float ll, r; // Untuk Luas Lingkaran
+    // Perhitungan Luas Lingkaran
+    cout << endl << "MENGHITUNG LUAS LINGKARAN" << endl;
+    
+    cout << "Berapa Jari Jari Lingkaran : ";
+    cin >> r;
+    
+    ll = 3.14 * r * r;
+    
+    cout << endl << "Luas Lingkaran Adalah : " << ll << endl;
+    break;
+    
+    cout << endl << "======================================" << endl;
+    
+    void p_panjang();
+    case 3:
+    float lpj, p, l; // Untuk Luas Persegi Panjang
+    // Perhitungan Luas Persegi Panjang
+    cout << endl << "MENGHITUNG LUAS PERSEGI PANJANG" << endl;
+    
+    cout << "Berapa Panjang Persegi Panjang : ";
+    cin >> p;
+    
+    cout << "Berapa Lebar Persegi panjang : ";
+    cin >> l;
+    
+    lpj = p * l;
+    
+    cout << endl << "Luas Persegi Panjang Adalah : " << lpj;
+    break ;
+    
+    }
+    
+    return 0;
+ 
+}
