@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int ganjil;
+    int genap;
+    
+    cout << "Masukkan Angka Bilangan Ganjil : ";
+    cin >> ganjil;
+    
+    cout << "Masukkan Angka Bilangan Genap : ";
+    cin >> genap;
+    cout << endl;
+    
+    if (( ganjil % 2 == 1) && genap % 2 == 0 ){
+        cout << "Angka " << ganjil << " Adalah Bilangan Ganjil" << endl;
+        cout << "Angka " << genap << " Adalah Bilangan Genap" << endl;
+        cout << endl << "Angka Sesuai Dengan Kriteria";
+    }else{
+        cout << "Angka " << ganjil << " Bukanlah Bilangan Ganjil" << endl ;
+        cout << "Angka " << genap << " Bukanlah Bilangan Genap" << endl;
+        cout << endl << "Angka Tidak Sesuai Dengan Kriteria";
+    }
+    
+    return 0;
+}
