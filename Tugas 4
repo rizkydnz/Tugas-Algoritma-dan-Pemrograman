@@ -1,0 +1,121 @@
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+
+  string jobClass;
+  cout << "Pilihan Karakter Job Class" << endl;
+  cout << "1. Ksatria" << endl;
+  cout << "2. Pemanah" << endl;
+  cout << "3. Medis" << endl;
+  cout << "Pilih Job Class : ";
+  cin >> jobClass;
+
+  int playerLevel = 1;
+  int playerHealth = 100;
+  int playerDamage = 10;
+
+  cout << "Selamat Datang, " << jobClass << "! Kamu Sekarang Level " << playerLevel << endl;
+
+  while (true){
+      // Pilih tingkat kesulitan monster secara acak
+      int difficulty;		// 1: easy, 2: medium, 3: hard, 4: very hard
+
+      // Inisialisasi atribut monster berdasarkan tingkat kesulitan
+      string monsterName;
+      int monsterHealth, monsterDamage;
+      cout << endl << "1. Easy = Goblin" << endl;
+      cout << "2. Medium = Orc Lord" << endl;
+      cout << "3. Hard = Chimera" << endl;
+      cout << "4. Very Hard = Dragon" << endl;
+      cout << "Pilih Tingkat Kesusahan : ";
+      cin >> difficulty;
+      
+      if (difficulty == 1){
+	  monsterName = "Goblin";
+	  monsterHealth = 40;
+	  monsterDamage = 10;
+	} else if (difficulty == 2){
+	  monsterName = "Orc Lord";
+	  monsterHealth = 60;
+	  monsterDamage = 15;
+	} else if (difficulty == 3){
+	  monsterName = "Chimera";
+	  monsterHealth = 80;
+	  monsterDamage = 20;
+	} else if (difficulty == 4){
+	  monsterName = "Dragon";
+	  monsterHealth = 100;
+	  monsterDamage = 25;
+	}
+
+      cout << endl << "A wild " << monsterName << " appeared!" << endl;
+
+
+      while (monsterHealth > 0 && playerHealth > 0){
+	  cout << endl << "Status Player" << "\t       Status Monster" << endl;
+	  cout << "Job Class : " << jobClass << endl;
+	  cout << "Level : " << playerLevel << "\t       Monster : " << monsterName << endl;
+	  cout << "Health : " << playerHealth << "\t       Health : " << monsterHealth << endl;
+	  cout << "Damage : " << playerDamage << "\t       Damage : " << monsterDamage << endl;
+
+	  int choice;
+	  cout << endl << "1. Serang" << endl;
+	  cout << "2. Memulihkan" << endl;
+	  cout << "3. Kabur Dari Pertempuran" << endl;
+	  cout << "Pilih Opsi : ";
+	  cin >> choice;
+
+
+	  if (choice == 1){
+	      // Serang monster
+	      int attackDamage = playerDamage;
+	      monsterHealth -= attackDamage;
+	      cout << endl << "Kamu Memberikan Serangan Sebesar " << attackDamage << " damage!" << endl;
+
+	      if (monsterHealth <= 0){
+		  // Pemain berhasil mengalahkan monster
+		  cout << "Kamu Mengalahkan " << monsterName << "!" << endl;
+		  playerLevel++;
+		  playerHealth += 20;
+		  playerDamage += 5;
+		  cout << "Congratulations! You leveled up to level " << playerLevel << "." << endl;
+		} else{
+		  // Serangan balik monster
+		  int monsterAttack = monsterDamage;
+		  playerHealth -= monsterAttack;
+		  cout << monsterName << " Memberikan Serangan Sebesar " << monsterAttack << " damage!" << endl;
+}
+	    } else if (choice == 2){
+	      int potionAmount = 20;
+	      playerHealth += potionAmount;
+	      cout << "Kamu Menggunakan Ramuan Memulihkan Sebesar " << potionAmount << " health!" << endl;
+
+	    } else if (choice == 3){
+	      cout << "Kamu Lari Dari Pertempuran" << endl;
+	      return 0;
+	    } else {
+	      cout << "Invalid choice. Try again." << endl;
+	    }
+	}
+
+      if (playerHealth <= 0){
+	  cout << "Game over! Kamu Telah Dikalahkan Oleh " << monsterName << endl;
+	}
+
+      char playAgain;
+      cout << endl << "Kamu Mau Melanjutkan Permainan? (y/n): ";
+      cin >> playAgain;
+
+      if (playAgain != 'y'){
+	  cout << "Thanks for playing! Goodbye." << endl;
+	  return 0;
+	}
+}
+
+
+  return 0;
+
+}
